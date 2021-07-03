@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+{% block content %}
+
+       <header class="nav center">
+        <p class="logo">Quiz Master</p>
+
+        <nav>
+            <ol class="center">
+                <a href="#About"><li>About</li></a>
+                <a href="/courses"><li>Courses</li></a>
+                <a href="#Experience"><li>Experience</li></a>
+                <a href=""><li>Login/Signup</li></a>
+             </ol>
+
+        </nav>
+
+    </header>
+
+    <!-- Projects -->
+    <div class="projects center" id="Projects">
+        <h3>Courses</h3>
+        <div class="container">
+            <a href="https://github.com/shubham44-code/COVID-19-Tracker">
+                <div>PYTHON</div>
+            </a>
+            <a href="https://github.com/shubham44-code/Weather-App">
+               <div>JAVA SCRIPT</div>
+            </a>
+            <a href="https://github.com/shubham44-code/Movies-Search-Api-Js">
+               <div>C#.NET</div>
+            </a>
+            <a href="https://github.com/shubham44-code/social-websites">
+                <div>CORE JAVA</div></a>
+        </div>
+    </div>
+
+
+    <!-- Experience -->
+    <div class="experience center" id="Experience">
+        <h3>Experience</h3>
+        <ul>
+            <li>
+                <small>2018 Now</small>
+                <p>Senior Product Designer</p>
+                <p>Nike</p>
+            </li>
+            <li>
+                <small>2012-2018</small>
+                <p>Visual Designer</p>
+                <p>Converse</p>
+            </li>
+        </ul>
+    </div>
+
+
+
+
+<!-- Contact -->
+    <div class="contact center" id="Contact">
+        <h3>Contact</h3>
+        <form action="" class="center">
+            <input type="text" name="" id="" placeholder="Name">
+            <input type="email" name="" id="" placeholder="Email-id">
+            <textarea name="" id="" cols="30" rows="10" ></textarea>
+            <button class="btn">SUBMIT</button>
+        </form>
+    </div>
+
+    <!--footer-->
+		<footer class="footer">
+			<p class="footer_title">Quiz Master</p>
+			<div class="footer_social">
+				<a href="#" class="footer_icon">
+					<i class="bx bxl-facebook"></i>
+				</a>
+				<a href="#" class="footer_icon">
+					<i class="bx bxl-instagram"></i>
+				</a>
+				<a href="#" class="footer_icon">
+					<i class="bx bxl-twitter"></i>
+				</a>
+			</div>
+			<p>&#169; 2021 all copyrights reserved</p>
+		</footer>
+
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
+
+
+
+{% endblock %}
