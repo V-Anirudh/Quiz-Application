@@ -1,9 +1,368 @@
-<script type="text/javascript">
-(function(d,s,id,u){
-  if (d.getElementById(id)) return;
-  var js, sjs = d.getElementsByTagName(s)[0],
-      t = Math.floor(new Date().getTime() / 1000000);
-  js=d.createElement(s); js.id=id; js.async=1; js.src=u+'?'+t;
-  sjs.parentNode.insertBefore(js, sjs);
-}(document, 'script', 'os-widget-jssdk', 'https://www.opinionstage.com/assets/loader.js'));
-</script><div id="os-widget-876854" class="os_widget" data-path="/navdeep-kaur-na/this-test-contains-10-questions-one-at-a-time-and-tests-your-knowledge-about-data-structures" data-of="navdeep-kaur-na" data-opinionstage-widget="2e8459d8-a03e-49ef-b430-8d255366072e"></div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python quiz</title>
+
+
+<h1>Python Quiz</h1>
+
+<div id="quizmain">
+  <div id="quizcontainer">
+  
+    <script>
+    function clickRadio(elmnt) {
+      var n, i, x;
+      n = elmnt.id;
+      for (i = 1; i < 5; i++) {
+        x = document.getElementById("label" + i);
+        if (x) {x.className = x.className.replace(" checkedlabel", "");}
+      }
+      document.getElementById("label" + n).className += " checkedlabel";
+    }
+    function clickNextButton(n) {
+      submitAnswer(n + 1);
+    }
+    function submitAnswer(n) {
+      var f = document.getElementById("quizform");
+      f["nextnumber"].value = n;
+      f.submit();
+    }
+    function startTimer() {
+      var tobj = document.getElementById("timespent")
+      var t = "0:00";
+      var s = 00;
+      var d = new Date();
+      var timeint = setInterval(function () {
+        s += 1;
+        d.setMinutes("0");
+        d.setSeconds(s);
+        min = d.getMinutes();
+        sec = d.getSeconds();
+        if (sec < 10) sec = "0" + sec;
+        document.getElementById("timespent").value = min + ":" + sec;
+      }, 1000);
+      tobj.value = t;
+    }
+    if (window.addEventListener) {              
+      window.addEventListener("load", startTimer);
+    } else if (window.attachEvent) {                 
+      window.attachEvent("onload", startTimer);
+    }
+    
+    </script>
+
+    <h2>Question 1 of 25:</h2>
+    <div id="Question1" class="none">
+    <p style="font-size: 20px" id="qtext"> 1. An Array is what kind of data structure.</p>
+    <form role="form" id="quizform" name="quizform" action="quiztest.asp?qtest=PYTHON" method="post">
+      <input type="hidden" name="starttime" value="7/17/2021 3:27:50 AM">
+      <input type="hidden" name="answers" value="0000000000000000000000000">
+      <input type="hidden" name="nextnumber">
+      <input type="hidden" name="prevnumber" value="1">
+      <div style="position:relative;width:100%;">
+        <div id="altcontainer" class="notranslate">
+          <input type="radio" name="quiz" id="3" onclick="clickRadio(this)" value="3"><label class="radiocontainer" id="label3"> 
+Linear<span class="checkmark"></span></label><br>
+          <input type="radio" name="quiz" id="1" onclick="clickRadio(this)" value="1"><label class="radiocontainer" id="label1"> Non- Linear<span class="checkmark"></span></label><br>
+          <input type="radio" name="quiz" id="2" onclick="clickRadio(this)" value="2"><label class="radiocontainer" id="label2"> 
+Complex<span class="checkmark"></span></label><br>
+          <input type="radio" name="quiz" id="4" onclick="clickRadio(this)" value="4"><label class="radiocontainer" id="label4"> All the above<span class="checkmark"></span></label><br>
+          <input type="radio" name="quiz" id="5" onclick="clickRadio(this)" value="4"><label class="radiocontainer" id="label4"> None<span class="checkmark"></span></label><br>
+        </div>
+      </div>
+    </div>
+   
+    <div id="Question2" class="none">
+    <p style="font-size: 20px" id="qtext">2.While inserting an item in an array of integers which loop is right, where pos is the pos at which insertion is to be made(assume array starts from 1 and N is the max no. of items in the array.)</p>
+    <form role="form" id="quizform" name="quizform" action="quiztest.asp?qtest=PYTHON" method="post">
+      <input type="hidden" name="starttime" value="7/17/2021 3:27:50 AM">
+      <input type="hidden" name="answers" value="0000000000000000000000000">
+      <input type="hidden" name="nextnumber">
+      <input type="hidden" name="prevnumber" value="1">
+      <div style="position:relative;width:100%;">
+        <div id="altcontainer" class="notranslate">
+          <input type="radio" name="quiz" id="3" onclick="clickRadio(this)" value="3"><label class="radiocontainer" id="label3">For(i=pos;i>=1;i--) { A[i] = A[i+1]; }<span class="checkmark"></span></label><br>
+          <input type="radio" name="quiz" id="1" onclick="clickRadio(this)" value="1"><label class="radiocontainer" id="label1"> 
+For(i=pos ; i<span class="checkmark"></span></label><br>
+          <input type="radio" name="quiz" id="2" onclick="clickRadio(this)" value="2"><label class="radiocontainer" id="label2">
+For(i=N; i>=pos;i--) { A[i] = A[i+1]; }<span class="checkmark"></span></label><br>
+          <input type="radio" name="quiz" id="4" onclick="clickRadio(this)" value="1"><label class="radiocontainer" id="label1">  
+For(i=N; i>=pos;i--) { A[i+1] = A[i] }<span class="checkmark"></span></label><br>
+          <input type="radio" name="quiz" id="5" onclick="clickRadio(this)" value="2"><label class="radiocontainer" id="label2">/ 
+For(i=N; i<span class="checkmark"></span></label><br>
+          
+        </div>
+      </div>
+    </div>
+   
+    <div id="Question3" class="none">
+    <p style="font-size: 20px" id="qtext">3.A Stack follows the principle of
+</p>
+    <form role="form" id="quizform" name="quizform" action="quiztest.asp?qtest=PYTHON" method="post">
+      <input type="hidden" name="starttime" value="7/17/2021 3:27:50 AM">
+      <input type="hidden" name="answers" value="0000000000000000000000000">
+      <input type="hidden" name="nextnumber">
+      <input type="hidden" name="prevnumber" value="1">
+      <div style="position:relative;width:100%;">
+        <div id="altcontainer" class="notranslate">
+          <input type="radio" name="quiz" id="3" onclick="clickRadio(this)" value="3"><label class="radiocontainer" id="label3">  
+LIFO<span class="checkmark"></span></label><br>
+          <input type="radio" name="quiz" id="1" onclick="clickRadio(this)" value="1"><label class="radiocontainer" id="label1">FIFO<span class="checkmark"></span></label><br>
+          <input type="radio" name="quiz" id="2" onclick="clickRadio(this)" value="2"><label class="radiocontainer" id="label2"> BOTH A and B<span class="checkmark"></span></label><br>
+          <input type="radio" name="quiz" id="4" onclick="clickRadio(this)" value="4"><label class="radiocontainer" id="label4">None<span class="checkmark"></span></label><br>
+        </div>
+      </div>
+    </div>
+   
+
+    <div id="Question4" class="none">
+    <p style="font-size: 20px" id="qtext">4.With every push in the stack the   top</p>
+    <form role="form" id="quizform" name="quizform" action="quiztest.asp?qtest=PYTHON" method="post">
+      <input type="hidden" name="starttime" value="7/17/2021 3:27:50 AM">
+      <input type="hidden" name="answers" value="0000000000000000000000000">
+      <input type="hidden" name="nextnumber">
+      <input type="hidden" name="prevnumber" value="1">
+      <div style="position:relative;width:100%;">
+        <div id="altcontainer" class="notranslate">
+          <input type="radio" name="quiz" id="3" onclick="clickRadio(this)" value="3"><label class="radiocontainer" id="label3"> Decrements by one are correct<span class="checkmark"></span></label><br>
+          <input type="radio" name="quiz" id="1" onclick="clickRadio(this)" value="1"><label class="radiocontainer" id="label1">increments by one<span class="checkmark"></span></label><br>
+          <input type="radio" name="quiz" id="2" onclick="clickRadio(this)" value="2"><label class="radiocontainer" id="label2"> Stays there itself <span class="checkmark"></span></label><br>
+          
+        </div>
+      </div>
+    </div>
+
+    <div id="Question5" class="none">
+    <p style="font-size: 20px" id="qtext">5._________________ is a collection of elements used to store the same type of data.</p>
+    <form role="form" id="quizform" name="quizform" action="quiztest.asp?qtest=PYTHON" method="post">
+      <input type="hidden" name="starttime" value="7/17/2021 3:27:50 AM">
+      <input type="hidden" name="answers" value="0000000000000000000000000">
+      <input type="hidden" name="nextnumber">
+      <input type="hidden" name="prevnumber" value="1">
+      <div style="position:relative;width:100%;">
+        <div id="altcontainer" class="notranslate">
+          <input type="radio" name="quiz" id="3" onclick="clickRadio(this)" value="3"><label class="radiocontainer" id="label3"> Array<span class="checkmark"></span></label><br>
+          <input type="radio" name="quiz" id="1" onclick="clickRadio(this)" value="1"><label class="radiocontainer" id="label1"> Case<span class="checkmark"></span></label><br>
+          <input type="radio" name="quiz" id="2" onclick="clickRadio(this)" value="2"><label class="radiocontainer" id="label2"> Switcht<span class="checkmark"></span></label><br>
+          <input type="radio" name="quiz" id="4" onclick="clickRadio(this)" value="4"><label class="radiocontainer" id="label4"> Loop<span class="checkmark"></span></label><br>
+        </div>
+      </div>
+    </div>
+
+    <div id="Question6" class="none">
+    <p style="font-size: 20px" id="qtext">6.Which of the following is NOT a Type of Data Structures?</p>
+    <form role="form" id="quizform" name="quizform" action="quiztest.asp?qtest=PYTHON" method="post">
+      <input type="hidden" name="starttime" value="7/17/2021 3:27:50 AM">
+      <input type="hidden" name="answers" value="0000000000000000000000000">
+      <input type="hidden" name="nextnumber">
+      <input type="hidden" name="prevnumber" value="1">
+      <div style="position:relative;width:100%;">
+        <div id="altcontainer" class="notranslate">
+          <input type="radio" name="quiz" id="3" onclick="clickRadio(this)" value="3"><label class="radiocontainer" id="label3"> Arrays<span class="checkmark"></span></label><br>
+          <input type="radio" name="quiz" id="1" onclick="clickRadio(this)" value="1"><label class="radiocontainer" id="label1"> Stack<span class="checkmark"></span></label><br>
+          <input type="radio" name="quiz" id="2" onclick="clickRadio(this)" value="2"><label class="radiocontainer" id="label2"> Tables<span class="checkmark"></span></label><br>
+          <input type="radio" name="quiz" id="4" onclick="clickRadio(this)" value="2"><label class="radiocontainer" id="label2"> Trees<span class="checkmark"></span></label><br>
+          
+        </div>
+      </div>
+    </div>
+
+
+    <div id="Question7" class="none">
+    <p style="font-size: 20px" id="qtext">7. Storage for data defined in terms of set of operations to be performed on the data</p>
+    <form role="form" id="quizform" name="quizform" action="quiztest.asp?qtest=PYTHON" method="post">
+      <input type="hidden" name="starttime" value="7/17/2021 3:27:50 AM">
+      <input type="hidden" name="answers" value="0000000000000000000000000">
+      <input type="hidden" name="nextnumber">
+      <input type="hidden" name="prevnumber" value="1">
+      <div style="position:relative;width:100%;">
+        <div id="altcontainer" class="notranslate">
+          <input type="radio" name="quiz" id="3" onclick="clickRadio(this)" value="3"><label class="radiocontainer" id="label3"> Arrays<span class="checkmark"></span></label><br>
+          <input type="radio" name="quiz" id="1" onclick="clickRadio(this)" value="1"><label class="radiocontainer" id="label1"> Variables<span class="checkmark"></span></label><br>
+          <input type="radio" name="quiz" id="2" onclick="clickRadio(this)" value="2"><label class="radiocontainer" id="label2"> Abstract Data Types<span class="checkmark"></span></label><br>
+          <input type="radio" name="quiz" id="4" onclick="clickRadio(this)" value="4"><label class="radiocontainer" id="label4"> Algorithms<span class="checkmark"></span></label><br>
+        </div>
+      </div>
+    </div>
+
+    <div id="Question8" class="none">
+    <p style="font-size: 20px" id="qtext">8. A FIFO structure implemented as a ring where the front and rear pointers can wrap around the end of the start of the array.</p>
+    <form role="form" id="quizform" name="quizform" action="quiztest.asp?qtest=PYTHON" method="post">
+      <input type="hidden" name="starttime" value="7/17/2021 3:27:50 AM">
+      <input type="hidden" name="answers" value="0000000000000000000000000">
+      <input type="hidden" name="nextnumber">
+      <input type="hidden" name="prevnumber" value="1">
+      <div style="position:relative;width:100%;">
+        <div id="altcontainer" class="notranslate">
+          <input type="radio" name="quiz" id="3" onclick="clickRadio(this)" value="3"><label class="radiocontainer" id="label3">Linear Queue<span class="checkmark"></span></label><br>
+          <input type="radio" name="quiz" id="1" onclick="clickRadio(this)" value="1"><label class="radiocontainer" id="label1">Circular Queue
+<span class="checkmark"></span></label><br>
+          <input type="radio" name="quiz" id="2" onclick="clickRadio(this)" value="2"><label class="radiocontainer" id="label2">Priority Queue<span class="checkmark"></span></label><br>
+          
+        </div>
+      </div>
+    </div>
+
+
+
+    <div id="Question9" class="none">
+    <p style="font-size: 20px" id="qtext">9. A Binary search requires the data it is searching to be ordered in some way...
+
+</p>
+    <form role="form" id="quizform" name="quizform" action="quiztest.asp?qtest=PYTHON" method="post">
+      <input type="hidden" name="starttime" value="7/17/2021 3:27:50 AM">
+      <input type="hidden" name="answers" value="0000000000000000000000000">
+      <input type="hidden" name="nextnumber">
+      <input type="hidden" name="prevnumber" value="1">
+      <div style="position:relative;width:100%;">
+        <div id="altcontainer" class="notranslate">
+          <input type="radio" name="quiz" id="3" onclick="clickRadio(this)" value="3"><label class="radiocontainer" id="label3"> True<span class="checkmark"></span></label><br>
+          <input type="radio" name="quiz" id="1" onclick="clickRadio(this)" value="1"><label class="radiocontainer" id="label1"> False<span class="checkmark"></span></label><br>
+         
+        </div>
+      </div>
+    </div>
+
+
+    <div id="Question10" class="none">
+    <p style="font-size: 20px" id="qtext">10. A stack overflow is an undesirable condition in which a particular computer program tries to use more memory space than the called stack has available.</p>
+    <form role="form" id="quizform" name="quizform" action="quiztest.asp?qtest=PYTHON" method="post">
+      <input type="hidden" name="starttime" value="7/17/2021 3:27:50 AM">
+      <input type="hidden" name="answers" value="0000000000000000000000000">
+      <input type="hidden" name="nextnumber">
+      <input type="hidden" name="prevnumber" value="1">
+      <div style="position:relative;width:100%;">
+        <div id="altcontainer" class="notranslate">
+          <input type="radio" name="quiz" id="3" onclick="clickRadio(this)" value="3"><label class="radiocontainer" id="label3">True></span></label><br>
+          <input type="radio" name="quiz" id="1" onclick="clickRadio(this)" value="1"><label class="radiocontainer" id="label1"> False<span class="checkmark"></span></label><br>
+          <br>
+         
+        </div>
+      </div>
+    </div>
+
+
+      <div id="answerbuttoncontainer">
+        <button class="answerbutton w3-btn ws-green" type="submit" onclick="clickNextButton(1)">Submit and Finish ❯</button>&nbsp;&nbsp;&nbsp;&nbsp;
+        <input align="right" type="text"  readonly="" id="timespent" value="0:00">
+      </div>
+    </form>
+    
+      
+    
+  </div>
+</div>
+<hr>
+<style>  
+
+#w3_cert_badge {
+  position: absolute;
+  right: 5%;
+  width: 220px;
+  transform: rotate(10deg);
+  bottom: -20%;
+}
+
+#w3_cert_arrow {
+  position: absolute;
+  right: 220px;
+  width: 220px;
+  transform: rotate(10deg);
+  bottom: 0;
+  z-index: 1;
+}
+
+#getdiploma {
+  position: relative;
+  padding: 0 60px 50px 60px;
+  margin-bottom: 125px;
+  border-radius: 16px;
+  background-color: #282A35;
+  color: #FFC0C7;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+#getdiploma h2 {
+  font-size:50px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-family: 'Source Sans Pro', sans-serif
+}
+
+#getdiploma p {
+  font-size: 42px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-family: 'Source Sans Pro', sans-serif
+}
+
+#getdiploma a {
+  border-radius: 50px;
+  mxargin-top: 50px;
+  font-size: 18px;
+  background-color: #04AA6D;
+  padding: 17px 55px
+}
+
+#getdiploma a:hover,
+#getdiploma a:active {
+  background-color: #059862 !important;
+}
+
+
+@media screen and (max-width: 1442px) {
+  #w3_cert_arrow {
+    right: 212px;
+    bottom: -15px;
+  }
+}
+
+
+@media screen and (max-width: 1202px) {
+  #w3_cert_arrow {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  #w3_cert_arrow {
+    display: block;
+  }
+}
+
+
+@media screen and (max-width: 800px) {
+  #w3_cert_arrow {
+    display: none;
+  }
+  #getdiploma h2 {
+    font-size: 44px;
+  }
+  #getdiploma p {
+    font-size: 30px;
+  }
+
+  #getdiploma a {
+    width: 100%;
+  }
+  #w3_cert_badge {
+    top: -16px;
+    right: -8px;
+    width: 100px;
+  }
+  #getdiploma  {
+    margin-bottom: 55px;
+  }
+}
+</style>
+
+
+
+
+
+</div>
+
+
+
+</div>

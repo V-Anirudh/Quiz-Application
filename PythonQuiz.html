@@ -1,70 +1,355 @@
-{% extends "layout.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python quiz</title>
 
 
-{% block content %}
-    <!-- start Quiz button -->
-    <div class="start_btn"><button>Start Quiz</button></div>
+<h1>Python Quiz</h1>
 
-    <!-- Info Box -->
-    <div class="info_box">
-        <div class="info-title"><span>Some Rules of this Quiz</span></div>
-        <div class="info-list">
-            <div class="info">1. You will have only <span>15 seconds</span> per each question.</div>
-            <div class="info">2. Once you select your answer, it can't be undone.</div>
-            <div class="info">3. You can't select any option once time goes off.</div>
-            <div class="info">4. You can't exit from the Quiz while you're playing.</div>
-            <div class="info">5. You'll get points on the basis of your correct answers.</div>
+<div id="quizmain">
+  <div id="quizcontainer">
+  
+    <script>
+    function clickRadio(elmnt) {
+      var n, i, x;
+      n = elmnt.id;
+      for (i = 1; i < 5; i++) {
+        x = document.getElementById("label" + i);
+        if (x) {x.className = x.className.replace(" checkedlabel", "");}
+      }
+      document.getElementById("label" + n).className += " checkedlabel";
+    }
+    function clickNextButton(n) {
+      submitAnswer(n + 1);
+    }
+    function submitAnswer(n) {
+      var f = document.getElementById("quizform");
+      f["nextnumber"].value = n;
+      f.submit();
+    }
+    function startTimer() {
+      var tobj = document.getElementById("timespent")
+      var t = "0:00";
+      var s = 00;
+      var d = new Date();
+      var timeint = setInterval(function () {
+        s += 1;
+        d.setMinutes("0");
+        d.setSeconds(s);
+        min = d.getMinutes();
+        sec = d.getSeconds();
+        if (sec < 10) sec = "0" + sec;
+        document.getElementById("timespent").value = min + ":" + sec;
+      }, 1000);
+      tobj.value = t;
+    }
+    if (window.addEventListener) {              
+      window.addEventListener("load", startTimer);
+    } else if (window.attachEvent) {                 
+      window.attachEvent("onload", startTimer);
+    }
+    
+    </script>
+
+    <h2>Question 1 of 25:</h2>
+    <div id="Question1" class="none">
+    <p style="font-size: 20px" id="qtext"> 1. What is a correct syntax to output "Hello World" in Python?</p>
+    <form role="form" id="quizform" name="quizform" action="quiztest.asp?qtest=PYTHON" method="post">
+      <input type="hidden" name="starttime" value="7/17/2021 3:27:50 AM">
+      <input type="hidden" name="answers" value="0000000000000000000000000">
+      <input type="hidden" name="nextnumber">
+      <input type="hidden" name="prevnumber" value="1">
+      <div style="position:relative;width:100%;">
+        <div id="altcontainer" class="notranslate">
+          <input type="radio" name="quiz" id="3" onclick="clickRadio(this)" value="3"><label class="radiocontainer" id="label3"> p("Hello World")<span class="checkmark"></span></label><br>
+          <input type="radio" name="quiz" id="1" onclick="clickRadio(this)" value="1"><label class="radiocontainer" id="label1"> print("Hello World")<span class="checkmark"></span></label><br>
+          <input type="radio" name="quiz" id="2" onclick="clickRadio(this)" value="2"><label class="radiocontainer" id="label2"> echo "Hello World"<span class="checkmark"></span></label><br>
+          <input type="radio" name="quiz" id="4" onclick="clickRadio(this)" value="4"><label class="radiocontainer" id="label4"> echo("Hello World");<span class="checkmark"></span></label><br>
         </div>
-        <div class="buttons">
-            <button class="quit">Exit Quiz</button>
-            <button class="restart">Continue</button>
+      </div>
+    </div>
+   
+    <div id="Question2" class="none">
+    <p style="font-size: 20px" id="qtext">2.How do you insert COMMENTS in Python code?</p>
+    <form role="form" id="quizform" name="quizform" action="quiztest.asp?qtest=PYTHON" method="post">
+      <input type="hidden" name="starttime" value="7/17/2021 3:27:50 AM">
+      <input type="hidden" name="answers" value="0000000000000000000000000">
+      <input type="hidden" name="nextnumber">
+      <input type="hidden" name="prevnumber" value="1">
+      <div style="position:relative;width:100%;">
+        <div id="altcontainer" class="notranslate">
+          <input type="radio" name="quiz" id="3" onclick="clickRadio(this)" value="3"><label class="radiocontainer" id="label3">#This is a comment<span class="checkmark"></span></label><br>
+          <input type="radio" name="quiz" id="1" onclick="clickRadio(this)" value="1"><label class="radiocontainer" id="label1"> /*This is a comment*/<span class="checkmark"></span></label><br>
+          <input type="radio" name="quiz" id="2" onclick="clickRadio(this)" value="2"><label class="radiocontainer" id="label2">//This is a comment<span class="checkmark"></span></label><br>
+          
         </div>
+      </div>
+    </div>
+   
+    <div id="Question3" class="none">
+    <p style="font-size: 20px" id="qtext">3.Which one is NOT a legal variable name?</p>
+    <form role="form" id="quizform" name="quizform" action="quiztest.asp?qtest=PYTHON" method="post">
+      <input type="hidden" name="starttime" value="7/17/2021 3:27:50 AM">
+      <input type="hidden" name="answers" value="0000000000000000000000000">
+      <input type="hidden" name="nextnumber">
+      <input type="hidden" name="prevnumber" value="1">
+      <div style="position:relative;width:100%;">
+        <div id="altcontainer" class="notranslate">
+          <input type="radio" name="quiz" id="3" onclick="clickRadio(this)" value="3"><label class="radiocontainer" id="label3"> _myvar<span class="checkmark"></span></label><br>
+          <input type="radio" name="quiz" id="1" onclick="clickRadio(this)" value="1"><label class="radiocontainer" id="label1">Myvar<span class="checkmark"></span></label><br>
+          <input type="radio" name="quiz" id="2" onclick="clickRadio(this)" value="2"><label class="radiocontainer" id="label2"> my-var<span class="checkmark"></span></label><br>
+          <input type="radio" name="quiz" id="4" onclick="clickRadio(this)" value="4"><label class="radiocontainer" id="label4">my_var<span class="checkmark"></span></label><br>
+        </div>
+      </div>
+    </div>
+   
+
+    <div id="Question4" class="none">
+    <p style="font-size: 20px" id="qtext">4.How do you create a variable with the numeric value 5?</p>
+    <form role="form" id="quizform" name="quizform" action="quiztest.asp?qtest=PYTHON" method="post">
+      <input type="hidden" name="starttime" value="7/17/2021 3:27:50 AM">
+      <input type="hidden" name="answers" value="0000000000000000000000000">
+      <input type="hidden" name="nextnumber">
+      <input type="hidden" name="prevnumber" value="1">
+      <div style="position:relative;width:100%;">
+        <div id="altcontainer" class="notranslate">
+          <input type="radio" name="quiz" id="3" onclick="clickRadio(this)" value="3"><label class="radiocontainer" id="label3"> Both the other answers are correct<span class="checkmark"></span></label><br>
+          <input type="radio" name="quiz" id="1" onclick="clickRadio(this)" value="1"><label class="radiocontainer" id="label1">x = int(5)<span class="checkmark"></span></label><br>
+          <input type="radio" name="quiz" id="2" onclick="clickRadio(this)" value="2"><label class="radiocontainer" id="label2"> x = 5 <span class="checkmark"></span></label><br>
+          
+        </div>
+      </div>
     </div>
 
-    <!-- Quiz Box -->
-    <div class="quiz_box">
-        <header>
-            <div class="title">Awesome Quiz Application</div>
-            <div class="timer">
-                <div class="time_left_txt">Time Left</div>
-                <div class="timer_sec">15</div>
-            </div>
-            <div class="time_line"></div>
-        </header>
-        <section>
-            <div class="que_text">
-                <!-- Here I've inserted question from JavaScript -->
-            </div>
-            <div class="option_list">
-                <!-- Here I've inserted options from JavaScript -->
-            </div>
-        </section>
-
-        <!-- footer of Quiz Box -->
-        <footer>
-            <div class="total_que">
-                <!-- Here I've inserted Question Count Number from JavaScript -->
-            </div>
-            <button class="next_btn">Next Que</button>
-        </footer>
+    <div id="Question5" class="none">
+    <p style="font-size: 20px" id="qtext">5.What is the correct file extension for Python files?</p>
+    <form role="form" id="quizform" name="quizform" action="quiztest.asp?qtest=PYTHON" method="post">
+      <input type="hidden" name="starttime" value="7/17/2021 3:27:50 AM">
+      <input type="hidden" name="answers" value="0000000000000000000000000">
+      <input type="hidden" name="nextnumber">
+      <input type="hidden" name="prevnumber" value="1">
+      <div style="position:relative;width:100%;">
+        <div id="altcontainer" class="notranslate">
+          <input type="radio" name="quiz" id="3" onclick="clickRadio(this)" value="3"><label class="radiocontainer" id="label3"> .pyth<span class="checkmark"></span></label><br>
+          <input type="radio" name="quiz" id="1" onclick="clickRadio(this)" value="1"><label class="radiocontainer" id="label1"> .pt<span class="checkmark"></span></label><br>
+          <input type="radio" name="quiz" id="2" onclick="clickRadio(this)" value="2"><label class="radiocontainer" id="label2"> .pyt<span class="checkmark"></span></label><br>
+          <input type="radio" name="quiz" id="4" onclick="clickRadio(this)" value="4"><label class="radiocontainer" id="label4"> .py<span class="checkmark"></span></label><br>
+        </div>
+      </div>
     </div>
 
-    <!-- Result Box -->
-    <div class="result_box">
-        <div class="icon">
-            <i class="fas fa-crown"></i>
+    <div id="Question6" class="none">
+    <p style="font-size: 20px" id="qtext">6.How do you create a variable with the floating number 2.8?</p>
+    <form role="form" id="quizform" name="quizform" action="quiztest.asp?qtest=PYTHON" method="post">
+      <input type="hidden" name="starttime" value="7/17/2021 3:27:50 AM">
+      <input type="hidden" name="answers" value="0000000000000000000000000">
+      <input type="hidden" name="nextnumber">
+      <input type="hidden" name="prevnumber" value="1">
+      <div style="position:relative;width:100%;">
+        <div id="altcontainer" class="notranslate">
+          <input type="radio" name="quiz" id="3" onclick="clickRadio(this)" value="3"><label class="radiocontainer" id="label3"> x = 2.8<span class="checkmark"></span></label><br>
+          <input type="radio" name="quiz" id="1" onclick="clickRadio(this)" value="1"><label class="radiocontainer" id="label1"> Both are correct<span class="checkmark"></span></label><br>
+          <input type="radio" name="quiz" id="2" onclick="clickRadio(this)" value="2"><label class="radiocontainer" id="label2"> c = float(2.8)<span class="checkmark"></span></label><br>
+          
         </div>
-        <div class="complete_text">You've completed the Quiz!</div>
-        <div class="score_text">
-            <!-- Here I've inserted Score Result from JavaScript -->
-        </div>
-        <div class="buttons">
-            <button class="restart">Replay Quiz</button>
-            <button class="quit">Quit Quiz</button>
-        </div>
+      </div>
     </div>
 
-<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='PythonStyle.css') }}">
-<script src="static/js/PythonScript.js"></script>
-<script src="static/js/PythonQuestions.js"></script>
-{% endblock %}
+
+    <div id="Question7" class="none">
+    <p style="font-size: 20px" id="qtext">7.What is the correct syntax to output the type of a variable or object in Python?</p>
+    <form role="form" id="quizform" name="quizform" action="quiztest.asp?qtest=PYTHON" method="post">
+      <input type="hidden" name="starttime" value="7/17/2021 3:27:50 AM">
+      <input type="hidden" name="answers" value="0000000000000000000000000">
+      <input type="hidden" name="nextnumber">
+      <input type="hidden" name="prevnumber" value="1">
+      <div style="position:relative;width:100%;">
+        <div id="altcontainer" class="notranslate">
+          <input type="radio" name="quiz" id="3" onclick="clickRadio(this)" value="3"><label class="radiocontainer" id="label3"> print(type(x))<span class="checkmark"></span></label><br>
+          <input type="radio" name="quiz" id="1" onclick="clickRadio(this)" value="1"><label class="radiocontainer" id="label1"> print(typeof x)<span class="checkmark"></span></label><br>
+          <input type="radio" name="quiz" id="2" onclick="clickRadio(this)" value="2"><label class="radiocontainer" id="label2"> print(typeOf(x))<span class="checkmark"></span></label><br>
+          <input type="radio" name="quiz" id="4" onclick="clickRadio(this)" value="4"><label class="radiocontainer" id="label4"> print(typrof(x))<span class="checkmark"></span></label><br>
+        </div>
+      </div>
+    </div>
+
+    <div id="Question8" class="none">
+    <p style="font-size: 20px" id="qtext">8. What is the correct way to create a function in Python?</p>
+    <form role="form" id="quizform" name="quizform" action="quiztest.asp?qtest=PYTHON" method="post">
+      <input type="hidden" name="starttime" value="7/17/2021 3:27:50 AM">
+      <input type="hidden" name="answers" value="0000000000000000000000000">
+      <input type="hidden" name="nextnumber">
+      <input type="hidden" name="prevnumber" value="1">
+      <div style="position:relative;width:100%;">
+        <div id="altcontainer" class="notranslate">
+          <input type="radio" name="quiz" id="3" onclick="clickRadio(this)" value="3"><label class="radiocontainer" id="label3">def myFunction():<span class="checkmark"></span></label><br>
+          <input type="radio" name="quiz" id="1" onclick="clickRadio(this)" value="1"><label class="radiocontainer" id="label1">create myFunction():<span class="checkmark"></span></label><br>
+          <input type="radio" name="quiz" id="2" onclick="clickRadio(this)" value="2"><label class="radiocontainer" id="label2">function myfunction():<span class="checkmark"></span></label><br>
+          
+        </div>
+      </div>
+    </div>
+
+
+
+    <div id="Question9" class="none">
+    <p style="font-size: 20px" id="qtext">9. In Python, 'Hello', is the same as "Hello"
+
+</p>
+    <form role="form" id="quizform" name="quizform" action="quiztest.asp?qtest=PYTHON" method="post">
+      <input type="hidden" name="starttime" value="7/17/2021 3:27:50 AM">
+      <input type="hidden" name="answers" value="0000000000000000000000000">
+      <input type="hidden" name="nextnumber">
+      <input type="hidden" name="prevnumber" value="1">
+      <div style="position:relative;width:100%;">
+        <div id="altcontainer" class="notranslate">
+          <input type="radio" name="quiz" id="3" onclick="clickRadio(this)" value="3"><label class="radiocontainer" id="label3"> True<span class="checkmark"></span></label><br>
+          <input type="radio" name="quiz" id="1" onclick="clickRadio(this)" value="1"><label class="radiocontainer" id="label1"> False<span class="checkmark"></span></label><br>
+         
+        </div>
+      </div>
+    </div>
+
+
+    <div id="Question10" class="none">
+    <p style="font-size: 20px" id="qtext">10. What is a correct syntax to return the first character in a string?</p>
+    <form role="form" id="quizform" name="quizform" action="quiztest.asp?qtest=PYTHON" method="post">
+      <input type="hidden" name="starttime" value="7/17/2021 3:27:50 AM">
+      <input type="hidden" name="answers" value="0000000000000000000000000">
+      <input type="hidden" name="nextnumber">
+      <input type="hidden" name="prevnumber" value="1">
+      <div style="position:relative;width:100%;">
+        <div id="altcontainer" class="notranslate">
+          <input type="radio" name="quiz" id="3" onclick="clickRadio(this)" value="3"><label class="radiocontainer" id="label3">x = sub("Hello",0,1)></span></label><br>
+          <input type="radio" name="quiz" id="1" onclick="clickRadio(this)" value="1"><label class="radiocontainer" id="label1"> x = "Hello"[0]<span class="checkmark"></span></label><br>
+          <input type="radio" name="quiz" id="2" onclick="clickRadio(this)" value="2"><label class="radiocontainer" id="label2"> x = "Hello.sub(0,1)<span class="checkmark"></span></label><br><br><br>
+         
+        </div>
+      </div>
+    </div>
+
+
+      <div id="answerbuttoncontainer">
+        <button class="answerbutton w3-btn ws-green" type="submit" onclick="clickNextButton(1)">Submit and Finish ❯</button>&nbsp;&nbsp;&nbsp;&nbsp;
+        <input align="right" type="text"  readonly="" id="timespent" value="0:00">
+      </div>
+    </form>
+    
+      
+    
+  </div>
+</div>
+<hr>
+<style>  
+
+#w3_cert_badge {
+  position: absolute;
+  right: 5%;
+  width: 220px;
+  transform: rotate(10deg);
+  bottom: -20%;
+}
+
+#w3_cert_arrow {
+  position: absolute;
+  right: 220px;
+  width: 220px;
+  transform: rotate(10deg);
+  bottom: 0;
+  z-index: 1;
+}
+
+#getdiploma {
+  position: relative;
+  padding: 0 60px 50px 60px;
+  margin-bottom: 125px;
+  border-radius: 16px;
+  background-color: #282A35;
+  color: #FFC0C7;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+#getdiploma h2 {
+  font-size:50px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-family: 'Source Sans Pro', sans-serif
+}
+
+#getdiploma p {
+  font-size: 42px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-family: 'Source Sans Pro', sans-serif
+}
+
+#getdiploma a {
+  border-radius: 50px;
+  mxargin-top: 50px;
+  font-size: 18px;
+  background-color: #04AA6D;
+  padding: 17px 55px
+}
+
+#getdiploma a:hover,
+#getdiploma a:active {
+  background-color: #059862 !important;
+}
+
+
+@media screen and (max-width: 1442px) {
+  #w3_cert_arrow {
+    right: 212px;
+    bottom: -15px;
+  }
+}
+
+
+@media screen and (max-width: 1202px) {
+  #w3_cert_arrow {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  #w3_cert_arrow {
+    display: block;
+  }
+}
+
+
+@media screen and (max-width: 800px) {
+  #w3_cert_arrow {
+    display: none;
+  }
+  #getdiploma h2 {
+    font-size: 44px;
+  }
+  #getdiploma p {
+    font-size: 30px;
+  }
+
+  #getdiploma a {
+    width: 100%;
+  }
+  #w3_cert_badge {
+    top: -16px;
+    right: -8px;
+    width: 100px;
+  }
+  #getdiploma  {
+    margin-bottom: 55px;
+  }
+}
+</style>
+
+
+
+
+
+</div>
+
+
+
+</div>
